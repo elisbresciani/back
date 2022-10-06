@@ -1,8 +1,13 @@
+from json import load
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
+import os
+from dotenv import load_dotenv
 
-conn = "mysql://root:123456@localhost:3306/mydb"
+load_dotenv()
+
+conn = os.getenv('STRING_CONNECTION')
 
 app = Flask(__name__)
 
